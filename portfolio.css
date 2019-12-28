@@ -1,0 +1,179 @@
+html, body{
+  height: 100%;
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-color: #3F3446;
+}
+h1,
+h2 {
+  font-family: Cambria;
+  font-weight: 700;
+}
+img{
+  border-radius: 17px;
+}
+#navbar{
+  position: fixed;
+  height: 80px;
+  width: 100%;
+  background-color: #33044F;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 100;
+}
+#navbar li{
+  list-style: none;
+  text-decoration: none;
+  font-style: normal;
+  margin-right: 22px;
+  margin-left: 22px;
+}
+#navbar li a{
+  text-decoration: none;
+  font-size: 23px;
+  font-weight: 600;
+  color: #A006D4;
+}
+#bigCont{
+}
+/*.paralax{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  opacity: 0.3;
+  display: none;
+}*/
+.paralax1{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: url("C:/Users/ANONYMOUS/Desktop/WebSite/binarioBlue.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  opacity: .4;
+  z-index: 0;
+}
+.paralax2{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: url("C:/Users/ANONYMOUS/Desktop/WebSite/bluetech2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  opacity: .4;
+  z-index: -1;
+}
+#welcome-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: blue;
+  background-image: linear-gradient(62deg, #3a3d40 0%,
+    #905C9B 100%);
+  font-size: 1.7em;
+  color: #1F142A;
+}
+#welcome-section h1{
+  font-size: 1.7em;
+  font-weight: 700;
+  z-index: 2;
+}
+#loga{
+  top:379px;
+  right: 550px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  opacity: 0.7;
+  border: 9px solid darkblue;
+}
+#rute{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 30px;
+  max-height: 270px;
+  background-color: grey;
+  z-index: 2;
+}
+#rute h2{
+  display: block;
+  margin-bottom: 40px;
+  font-size: 1.8em;
+  font-family: candara;
+  font-style: italic;
+}
+#projects{
+  display: flex;
+  height: 400px;
+  background-color: none;
+  margin-top: 20px;
+  z-index: 4;
+}
+#projects header h1{
+  display: flex;
+  background-color:;
+  width: 100%;
+  margin-top: 77px;
+  margin-left: 520px;
+  font-size: 37px;
+}
+#cabcra{
+  display: flex;
+  justify-content: center;
+  width: 96%;
+  padding: 2%;
+  background-color: grey;
+  z-index: 3;
+}
+#cabcra > div {
+display: flex;
+flex: 1;
+max-width: 760px;
+background-color: #9FC8D9;
+border-radius: 17px;
+z-index: 3;
+}
+.infoCoru{
+  flex: 1;
+  width: 60%;
+  padding: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.pro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 130px;
+  width: 900vh;
+  height: 300px;
+  position: relative;
+  margin-top: 237px;
+  right: 497px;
+  background-color:;
+}
+.project-title{
+  width: 40vh;
+}
+.pro-title{
+  background-color: grey;
+  margin-top: -1px;
+  font-size: 1.5rem;
+  padding: 2rem 0.5rem;
+  border-radius: 17px;
+}

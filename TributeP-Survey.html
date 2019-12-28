@@ -1,0 +1,127 @@
+<!--Tres poemas de Borges en la entrada principal, con un Menú avanxado pero no funcional
+(por el momento)
+   >>>DECISIÓN 2: Tambien usaré esta página para los ejercicios de JavaScript en cuanto
+   al tema de las FUNCIONES ANONIMAS, las FUNCIONES ESTANDAR y los OBJETOS. -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Tribute to Jorge Luis Borges</title>
+<link rel="stylesheet" href="tribute1.css"
+</head>
+<body>
+  <div id="main">
+    <header>
+      <h1 id="title">Jorge Luis Borges</h1>
+    </header>
+    <div id="img-div">
+      <img id="image" src="borges.jpeg" alt="borges">
+      <h4 id="img-caption">Borges ante el mundo, Borges ante la Humanidad</h4>
+    </div>
+    <main id="tribute-info">
+      <h3><i>POESÍA DE BORGES PARA EL ESPÍRITU MODERNO</i></h3>
+<br>
+<p id="description">Un pequeño formulario...</p>
+
+<div class="form">
+<form id="survey-form">
+  <label for="name-label" id="name-label">Nombre</label>
+  <input type="text" name="name-label" value="Nombre">
+  <br>
+  <br>
+
+  <label for="email" id="email-label">Email</label>
+  <input type="email" name="email" value="...@gmail.com">
+  <br>
+  <br>
+
+  <label for="edad" id="number-label">Edad</label>
+  <input type="number" name="edad" value="_ Años" min="18" max="80">
+  <br><br>
+
+  <label for="pais">País</label>
+  <select id="dropdown" class="pais" name="pais">
+    <option value="Mexico">México</option>
+    <option value="Canada">Canadá</option>
+    <option value="Colombia">Colombia</option>
+    <option value="Argentina">Argentina</option>
+    <option value="Estados Unidos">Estados Unidos</option>
+    <option value="Peru">Perú</option>
+  </select> <br> <br>
+
+  <label for="sysOS"><u>Región Americana</u></label>
+  <input type="radio" name="sysOS" value="Windows"> Norteamérica
+  <input type="radio" name="sysOS" value="Mac"> Centroamérica
+  <input type="radio" name="sysOS" value="Linux"> Sudamérica
+  <br><br>
+
+  <input type="checkbox" name="vehicle1" value="Yes"> He leído a Borges<br>
+  <input type="checkbox" name="vehicle2" value="No"> Aún no he leído a Borges
+  <br><br>
+
+  <textarea name="comments" rows="8" cols="60" placeholder="Comentarios Adicionales"></textarea><br>
+
+  <button type="submit" name="boton">Enviar</button>
+</form>
+</div>
+    </main>
+    <a href="https://borgestodoelanio.blogspot.com/" target="_blank">Click para visitar el Blog de
+    Borges todo el Año</a>
+  </div>
+
+  <br>
+  <br>
+
+  <h3 id="resultado">El resultado de la operación es: </h3>
+  <button onclick="laFuncion()">Da click para saber el resultado.</button>
+  <br><br>
+
+  <h3>Esta es la segunda operación: ahora el usuario define los valores de entrada.</h3><br>
+  <h4>Inserte los dos numeros que desea multiplicar y después dé click en el botón "Resultado"</h4>
+  <input type="number" id="n1" value=""><br>
+  <input type="number" id="n2" value=""><br>
+  <button onclick="operacionUno()">Resultado</button> <button onclick="butLo()">Limpiar</button> <br>
+  <h3 id="resultado2">El resultado de la operación es: </h3>
+
+
+  <input type="text" id="texto" placeholder="mis ideas"></input>
+  <input type="button" value="Enviar" onclick="impresor()">
+
+</body>
+<script>
+
+<!--FUNCION ANONIMA-1 La cual es guardada en la primera variable y es llamada mediante el nombre-->
+<!--de la segunda variable.-->
+var mifuncion = function(valor){
+ valor = valor + 3;
+ return valor;
+};
+//PRIMERA FUNCION = Operación determinada desde el código
+var total = 2;
+for (var f = 0; f < 10; f++){
+ total = mifuncion(total);
+}
+function laFuncion(){
+  var h = document.getElementById("resultado");
+  h.insertAdjacentText("beforeend", total );
+}
+//SEGUNDA FUNCION = Operación determinada por El Usuario
+function operacionUno(){
+  var n1 = document.getElementById("n1").value;
+  var n2 = document.getElementById("n2").value;
+  var resul2 = n1 * n2;
+  var hh = document.getElementById("resultado2");
+  hh.insertAdjacentText("beforeend", resul2 );
+}
+function butLo(){
+  document.getElementById("n1").value = " ";
+  document.getElementById("n2").value = " ";
+  document.getElementById("resultado2").innerHTML = "El resultado de la operación es ";
+}
+//TERCERA FUNCION = Obtener input de texto y mostrarlo en la ventana de alert
+function impresor(){
+  var t = document.getElementById("texto").value;
+  alert(t);
+}
+</script>
+</html>

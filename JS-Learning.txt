@@ -1,0 +1,788 @@
+BASIC JS
+
+
+>i++ / i--   <ITERACIÓN >
+
+>var a = 12; --> a += 6; (a = a + 6;)  <DECLARACIÓN VARIABLES/Operador MÁS/IGUAL--MENOS/IGUAL>
+
+>7 & 2 = 1; impar!- (Math.floor(7/2)=3; 3*2=6; 7-6=1) <RESIDUO DE DIVISIÓN>
+
+>(\')(\")(\\)(\n)(\r)(\b)(\t)(\f)                         <SECUENCIAS DE ESCAPE EN CADENAS DE TEXTO (STRINGS)>
+
+> .length                                                    <EXTENSIÓN DE UN STRING O UN ARRAY>
+
+> var veCtor = [12, 34, "Piña", 7]; ----------------            <ARRAYS>
+
+> var multVector = [[34, "Solimán"],[4, 5, 6], [12, "Rayuela"]];           <ARRAY MULDITIMENSIONAL>
+         --------------------------------------------------------------------------------------------
+> var arro = [
+  [1,2,3],
+  [4,5,6],
+  [7,8,9],
+  [[10,11,12], 13, 14]
+];
+arro[3]; // equals [[10,11,12], 13, 14]
+arro[3][0]; // equals [10,11,12]
+arro[3][0][1]; // equals 11                      <SELECCIONAR VALORES DE UN ARRAY>
+        ----------------------------------------------------------------------------------------------
+> var array = [2, 4, 6];
+ array.push(8);                                 <FUNCIÓN .push(); [Añade un valor al final de un array]
+ ------->>>>("array" ahora es igual a= [2,4,6,8];
+
+>var array = [2, 4, 6];
+ var minux = array.pop();                       <FUNCIÓN .pop(); [Remueve el último valor de un array y puede almacenarse]
+ ---> array = [2, 4];
+ ---> minux = 6 
+
+>var array = [2, 4, 6];                        <FUNCIÓN .shift();[Remueve el primer valor un de array y se almacena]
+ var minux = array.shift();
+ -->array = [4, 6]; 
+ -->minux = 2
+
+>var array = [2, 4, 6];
+  array.shift();
+  array.unshift(10);                           <FUNCIÓN unshift();[Añade un valor al inicio de un array]
+
+-----> array =  [10, 4, 6];
+
+
+>    Ámbitos -----------            <ÁMBITO GLOBAL -- ÁMBITO LOCAL>
+ 
+
+> var boolKrub = true;
+  var boolKrab = false;                     <VALORES BOOLEANOS>
+
+
+>function condit(value){
+  if(value <= 0){
+    return "Invalid Value";
+  }else if(value < 18){                                 <CONDICIONALES>
+    return "Forbidden Age";                          <if / else / else if>
+  }
+  else{
+    return "Open Access: LOGIN"; 
+  }
+}
+******* *********** *************
+
+>function caseInSwitch(val) {
+  var answer = "";
+switch(val){
+  case 1:
+   answer = "alpha";                             
+   break;
+  case 2:
+    answer = "beta";
+    break;
+  case 3:
+    answer = "gamma";                        <CONDICIONAL SWITCH>
+    break;
+ }
+  return answer;
+}
+
+>function caseInSwitch(val) {                           <MÚLTIPLES SWITCH_CASES PARA UN SOLO RESULTADO>
+  var answer = "";
+switch(val){
+  case 1:
+  case 2:
+    answer = "1 or 2";                                 
+    break;
+  case 3:
+    answer = "It's a three!";
+    break;
+ }
+  return answer;
+******************************************************************
+var myManHere = {
+  "name": "Jacohinde",
+  "legs": 2,                                                  <OBJETOS JAVASCRIPT>
+  "wings": 2,
+  "friends": ["Alexis!", "Alan", "Iván", "Gerardo"]
+};
+
+------------------- - ----------- --------------------
+                            <SELECCIONANDO PROPIEDADES DE UN OBJETO>
+
+var alasJack = myManHere.wings; (Resultado= 2)
+var nomBre = myManHere["name"]; (Resultado= Jacohinde)
+var bestFr = myManHere.friends[0]; (Resultado= Alexis!)
+var myNigga = myManHere.friends[3]; (Resultado= Gerardo)
+
+
+                  <UPDATING EL VALOR DE LA PROPIEDAD DE UN OBJETO>
+
+myManHere.name = "Amadeo"; or myManHere["name"] = "Amadeo"; 
+
+********************************
+   <OBJETOS COMPLEJOS>
+
+*Hay 2 tipos:  a)Objeto Anidado (NESTED OBJECT)
+               b)Array  Anidado (NESTED ARRAY )
+
+ *****      ---           --------------       ----
+>var miMemoria = {
+  "desk": {
+    "drawer": "stapler"
+  },
+  "cabinet": {
+    "top drawer": {                            <NESTED OBJECT>
+      "folder1": "a file",
+      "folder2": "secrets"
+    },
+    "bottom drawer": "soda"
+  }
+};
+miMemoria.cabinet["top drawer"].folder2;  // "secrets"
+miMemoria.desk.drawer; // "stapler"
+
+****************-----------------------------------------------
+>var myPlants = [
+  {
+    type: "flowers",
+    list: [
+      "rose",
+      "tulip",
+      "dandelion"                                     <NESTED ARRAY> -----  ARRAY ANIDADO = OBJETO COMPLEJO
+    ]
+  },
+  {
+    type: "trees",
+    list: [
+      "fir",
+      "pine",
+      "birch"
+    ]
+  }
+];
+myPlants[0].list[1];  //"tulip"
+myPlants[1].type;     //"trees"
+
+
+--------------------------------------------------------------------------------------------
+
+
+>                        <WHILE>
+var miArray = [];
+var i = 0;
+while(i < 5) {
+  miArray.push(i);
+  i++;
+}
+
+>                         <DO WHILE>
+var ourArray = []; 
+var i = 5;
+do {
+  ourArray.push(i);
+  i++;
+} while (i < 5);
+
+----------------------------------------------
+>                                  <FOR>
+var ourArr = [ 9, 10, 11, 12];
+var ourTotal = 0;
+
+for (var i = 0; i < ourArr.length; i++) {
+  ourTotal += ourArr[i];
+}
+----->>> ourTotal = 42.
+
+var countDown = [];
+ for(var i=10; i > 0; i-=2){
+   countDown.push(i);  
+  }
+---->>> countDown = [10, 8, 6, 4, 2]
+-------------------------------------------------------
+
+>                                          <RECURSION  (funciones recursivas)>
+
+  Su utilidad principal es sustituir los ciclos/bucles innecesarios en el código, mediante funciones que se definen a sí mismas en una versión más sencilla de sí misma. 
+
+"Recursion is simply when a function calls itself."
+
+---Base Case 
+---Condicional recursiva
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+(función regular)
+function multiply(arr, n) {
+    var product = 1;
+    for (var i = 0; i < n; i++) {
+        product *= arr[i];
+    }
+    return product;
+  }
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<>>
+(función recursiva)
+
+function multiply(arr, n) {
+    if (n <= 0) {
+      return 1;
+    } else {
+      return multiply(arr, n - 1) * arr[n - 1];
+    }
+  }
+>>¿CÓMO INGRESAR EL RESULTADO DE LA OPERACIÓN EN EL TEXTO?<< (=ejemplo en "index-udg.html")
+-------------------------------------------------------------------------------------------------------
+
+>  -----------------------------<NÚMERO ALEATORIO>
+
+   Math.random();
+
+>  ---------------------------------<REDONDEAR NÚMERO>
+
+   Math.floor();
+
+  ej== Math.floor(Math.random() * 7);
+
+>---------------------------------------<NUMERO ALEATORIO DENTRO DE UN RANGO DEFINIDO (y redondeado)>
+function randomRange(myMin, myMax) {
+
+  return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;
+
+}
+var myRandom = randomRange(5, 15);
+
+>--------------------------------------------<LA FUNCIÓN parseInt();>
+
+**Sirve para convertir una cadena de texto en un número... si dicha cadena no puede ser convertida a número, entonces devolerá "NAN"
+
+var integral = parseInt("009");  //(integral:9)
+
+>--------------------------------------------------<LA FUNCIÓN PARSEINT + "RADIX">
+
+  el Radix es el segundo valor dentro del paréntesis de parseInt(); y especifica LA BASE NUMÉRICA del valor a convertir.
+
+Ejemplo:  
+
+var radix = parseInt("1010", 2);
+//(radix:10)
+
+
+
+>------------------------------------<CONDICIONAL TERNARIA (TERNARY)>
+
+function findGreater(a, b) {
+  if(a > b) {
+    return "a is greater";
+  }
+  else {
+    return "b is greater";
+  }
+}
+
+~~~Resulta Lo Mismo Que =
+
+function findGreater(a, b) {
+  return a > b ? "a is greater" : "b is greater";
+}
+
+>-----------------------------------------<CONDICIONAL TERNARIA MULTIFUNCIONAL>
+
+function findGreaterOrEqual(a, b) {
+  return (a === b) ? "a and b are equal" 
+    : (a > b) ? "a is greater" 
+    : "b is greater";
+}
+********************************************
+ES6=
+
+*let (instead of..) "var"
+*const (instead of..) "var" or "let"
+
+
+>>                                          <"Mutate an Array Declared with const">
+
+ const s = [5, 7, 2];
+function editInPlace() {
+  'use strict';
+
+  s.pop();
+  s.unshift(2);
+  return s;
+}
+console.log(editInPlace()); // s = [2, 5, 7];
+
+
+>>----------------------------------------<ARROW FUNCTIONS (funciones flecha)>
+
+>>const myFunc = function() {
+  const myVar = "value";
+  return myVar;
+}
+
+
+==   const myFunc = () => {
+  const myVar = "value";      ===============  const myFunc = () => "value";
+  return myVar;                     (arrow funct)
+}
+
+
+
+>>----------------------------------------------------<DEFINE PARÁMETROS DEFAULT PARA LAS FUNCIONES>
+
+const greeting = (name = "Anonymous") => "Hello " + name;
+
+console.log(greeting("John")); // Hello John
+console.log(greeting()); // Hello Anonymous
+
+>>------------------------------------------------<REST PARAMETER>
+const sum = (...args) => {
+  return args.reduce((a, b) => a + b, 0);
+}
+console.log(sum(1, 2, 3)); // 6
+
+>>--------------------------------------------------<SPREAD OPERATOR>
+
+*Al igual que rest parameter, usa la sintáxis de tres puntos entre paréntesis o corchetas, pero en lugar de tomar argumentos y guardarlos al final de un Array, toma los valores de un Array y los propaga en varios argumentos/elementos.
+
+const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
+let arr2;
+arr2 = [...arr1]; // arr2=['JAN', 'FEB', 'MAR', 'APR', 'MAY']
+-------------------------------------------------------------------------------------------------------
+********************************************************************
+REGULAR EXPRESSIONS =
+
+                                Introduction to the Regular Expression Challenges
+Regular expressions are special strings that represent a search pattern. Also known as "regex" or "regexp", they help programmers match, search, and replace text. Regular expressions can appear cryptic because a few characters have special meaning. The goal is to combine the symbols and text into a pattern that matches what you want, but only what you want. This section will cover the characters, a few shortcuts, and the common uses for writing regular expressions.
+
+*Las Expresiones Regulares son usadas para hacer "matchs" o pareos entre las partes de un "string" o cadena de texto. Uno mismo debe crear los patrones que ayudarán a hacer el proceso de pareo.
+
+*JavaScript tiene múltiples formas de usar expresiones regulares (regexes). 
+
+>>----------------------------<Método TEST>
+
+let testStr = "freeCodeCamp";
+let testRegex = /Code/;
+testRegex.test(testStr);
+// Returns true
+                     (Only Literal Matches)
+
+>>----------------------------------<Ignore Case -FLAG "i" >
+Una "flag" para buscar matches aunque haya diferencias entre Cases, es decir MAYÚSCULAS y MINÚSCULAS.
+
+~~ i ~~
+let myString = "freeCodeCamp";
+let fccRegex = /freeCodeCamp/i;       !!!
+let result = fccRegex.test(myString);
+
+>>-----------------------------------------------<MÉTODO .match()>
+
+   "Hello, World!".match(/Hello/);
+// Returns ["Hello"]
+   let ourStr = "Regular expressions";
+   let ourRegex = /expressions/;
+     ourStr.match(ourRegex);
+// Returns ["expressions"]
+
+>>------------------------------------------<FLAG "g">
+Funciona para buscar o extraer un patrón MÁS de una vez.
+
+GLOBAL Flag!!
+
+~~ g ~~
+let testStr = "Repeat, Repeat, Repeat";
+let repeatRegex = /Repeat/g;
+testStr.match(repeatRegex);
+// Returns ["Repeat", "Repeat", "Repeat"]
+
+>>----------------------------------------------------------<Punto Wildcard>
+The wildcard character . will match any one character. The wildcard is also called dot and period. You can use the wildcard character just like any other character in the regex. For example, if you wanted to match "hug", "huh", "hut", and "hum", you can use the regex /hu./ to match all four words.
+
+let humStr = "I'll hum a song";
+let hugStr = "Bear hug";
+let huRegex = /hu./;
+huRegex.test(humStr); // Returns true
+huRegex.test(hugStr); // Returns true
+
+>>---------------------------------------------------------<Shortcut "\d" && "\D">
+               "\d"
+The shortcut to look for digit characters is \d, with a lowercase d. This is equal to the character class [0-9], which looks for a single character of any number between zero and nine.
+
+  let movieName = "2001: A Space Odyssey";
+  let numRegex = /\d/g; // Change this line
+  let result = movieName.match(numRegex).length;
+
+               "\D"
+The shortcut to look for non-digit characters is \D. This is equal to the character class [^0-9], which looks for a single character that is not a number between zero and nine.
+
+  let movieName = "2001: A Space Odyssey";
+  let noNumRegex = /\D/g; // Change this line
+  let result = movieName.match(noNumRegex).length;
+
+
+>>---------------------------------------------------------<USERNAME RESTRICTION>
+let username = "JackOfAllTrades";
+let userCheck = /^[a-z]([0-9][0-9]+|[a-z]+\d*)$/i; // Changed this line SUCCESSFULLY
+let result = userCheck.test(username);
+
+>>------------------------------------------<Match Whitespace>
+     "\s"
+
+let whiteSpace = "Whitespace. Whitespace everywhere!"
+let spaceRegex = /\s/g;
+whiteSpace.match(spaceRegex);
+// Returns [" ", " "]
+
+>>--------------------------------------------------------<Specify Upper and Lower Number of Matches>
+You can specify the lower and upper number of patterns with quantity specifiers. Quantity specifiers are used with curly brackets ({ and }). You put two numbers between the curly brackets - for the lower and upper number of patterns.
+
+**Change the regex ohRegex to match the entire phrase "Oh no" only when it has 3 to 6 letter h's.
+
+= let ohStr = "Ohhh no";
+  let ohRegex = /Oh{3,6} no/; // Changed this line SUCCESS
+  let result = ohRegex.test(ohStr);
+
+
+
+>>-------------------------------------------<Reuse Patterns with CAPTURE GROUPS>
+let repeatNum = "42 42 42";
+let reRegex = /^(\d+)\s\1\s\1$/; // HACE MATCH SI EL STRING ES UN NUMERO REPETIDO 3 VECES
+let result = reRegex.test(repeatNum);
+
+>>--------------------------------------------------<Use Capture Groups to Search and Replace>
+let wrongText = "The sky is silver.";
+let silverRegex = /silver/;
+wrongText.replace(silverRegex, "blue");
+// Returns "The sky is blue."
+
+Write a regex fixRegex using three capture groups that will search for each word in the string "one two three". Then update the replaceText variable to replace "one two three" with the string "three two one" and assign the result to the result variable. Make sure you are utilizing capture groups in the replacement string using the dollar sign ($) syntax.
+
+=== let str = "one two three";
+    let fixRegex = /(\w+)\s(\w+)\s(\w+)$/; // Change this line
+    let replaceText = (fixRegex, '$3 $2 $1'); // Change this line
+    let result = str.replace(fixRegex, replaceText);
+
+TITLE CASE A SENTENCE
+
+function titleCase(str) {
+  var testo = str.toLowerCase().split(" ");
+  var resu = testo.map(function(vep){
+return vep.replace(vep.charAt(0),vep.charAt(0).toUpperCase());
+}); 
+return resu.join(' ');
+}
+
+titleCase("I'm a little tea pot");
+
+2.-SPLICE & SLICE
+---Copy each element of the first array into the second array, in order.
+
+function frankenSplice(arr1, arr2, n) {
+  let ga = arr2.slice();
+  for(let i=0;i<arr1.length;i++){
+    ga.splice(n, 0, arr1[i]);
+    n++;
+  }
+  return ga;
+}
+
+frankenSplice([1, 2, 3], [4, 5, 6], 1);
+
+3.-FALSY BOUNCER
+Remove all falsy values from an array.
+
+function bouncer(arr) {
+  let bop = [];
+  for(let i=0;i<arr.length;i++){
+    var ress = Boolean(arr[i]);
+    if(ress == true){
+      bop.push(arr[i]);
+      //return ress;
+   }
+ }
+return bop;
+}
+
+bouncer([7, "ate", "", false, 9]);
+
+
+3.-------------- Understand the Prototype Chain   
+function Dog(name) {
+  this.name = name;
+}
+
+let beagle = new Dog("Snoopy");
+
+Dog.prototype.isPrototypeOf(beagle);  // yields true
+
+// Fix the code below so that it evaluates to true
+Object.prototype.isPrototypeOf(Dog.prototype);
+
+
+*************************************************************************************
+Use a Mixin to Add Common Behavior Between Unrelated Objects
+
+let bird = {
+  name: "Donald",
+  numLegs: 2
+};
+
+let boat = {
+  name: "Warrior",
+  type: "race-boat"
+};
+
+// Only change code below this line
+
+let glideMixin = function(ob){
+  ob.glide = function(){
+    console.log("Glieding!")
+  }
+}
+glideMixin(bird); 
+glideMixin(boat);
+bird.glide();
+boat.glide();
+********************************************************************************************************
+Use Closure to Protect Properties Within an Object from Being Modified Externally
+
+function Bird() {
+  let weight = 15;
+  this.getWeight = function(){
+    return weight;
+  }
+}
+***************************************************************************************************************
+Use an IIFE to Create a Module
+
+An immediately invoked function expression (IIFE) is often used to group related functionality into a single object or module. For example, an earlier challenge defined two mixins:
+
+let funModule = (function(obj) {
+  return {
+    isCuteMixin: function(obj) {
+      obj.glide = function() {
+        console.log("Gliding on the water");
+      };
+    },
+    singMixin: function(obj) {
+      obj.fly = function() {
+        console.log("Flying, wooosh!");
+      };
+    }
+  }
+  funModule.isCuteMixin();
+  funModule.singMixin();
+})();
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AGORITHM SCRIPTING
+               DNA Pairing
+         -----------------------
+*for the input GCG, return [["G", "C"], ["C","G"],["G", "C"]]
+*pairElement("TTGAG") should return [["T","A"],["T","A"],["G","C"],["A","T"],["G","C"]].
+*pairElement("ATCGA") should return [["A","T"],["T","A"],["C","G"],["G","C"],["A","T"]].
+
+
+function pairElement(str) {
+  var fe = [];
+  for(var i=0;i<str.length;i++){
+    switch(str[i]){
+      case "G": fe.push(["G", "C"]);
+      break;
+      case "C": fe.push(["C", "G"]);
+      break;
+      case "A": fe.push(["A", "T"]);
+      break;
+      case "T": fe.push(["T", "A"]);
+      break;
+
+    }
+  }
+  console.log(fe)
+  return fe;
+}
+
+pairElement("ATCGA");
+---------------------------------------------------------------------------------------------------------------------
+                                     Intermediate Algorithm Scripting: Missing letters
+Find the missing letter in the passed letter range and return it.
+
+If all letters are present in the range, return undefined.
+
+function fearNotLetter(str) {
+  var gp=[];
+  for(var o=1;o<str.length;o++){
+    var ge = [str]; 
+    var fa = str.charCodeAt(o);
+    var ho = str.charCodeAt(o-1);
+    gp.push(str[o]);
+    if(ho !== fa-1){
+      gp.pop()
+      var ke = String.fromCharCode(fa-1)
+      gp.push(ke); gp.push(String.fromCharCode(fa))
+      console.log(gp)
+    }
+  }
+  return ke;
+}
+
+fearNotLetter("abce");
+------------------------------------------------------------------------------------------------
+           Sorted Union
+Write a function that takes two or more arrays and returns a new array of unique values in the order of the original provided arrays.
+
+function uniteUnique(...arr) {
+  var ary = [];
+  var po = 0;
+  var fo = arr.join(",");
+  for(var e=0;e<fo.length;e++){
+    var du=fo[e];
+    po = Number(du);
+    if(!ary.includes(po)&&du!==","){
+      ary.push(po);
+    }
+  }
+  console.log(ary)
+  return ary;
+}
+
+uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
+
+---------------------------------------------------------------------------------------
+             Convert HTML Entities
+Convert the characters &, <, >, " (double quote), and ' (apostrophe), in a string to their corresponding HTML entities.
+
+function convertHTML(str) {
+return str.replace(/[&<>'"]/g, 
+  ve => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      "'": '&apos;',
+      '"': '&quot;'
+    }[ve]));;
+}
+
+convertHTML("Schindler's List");
+---------------------------------------------------------------------------------------
+              Sum All Odd Fibonacci Numbers
+
+function sumFibs(num) {
+  var re = 0;
+  var fib=[1, 1];
+  var fab = [];
+  if(num <= 1){
+    return fib[0];
+  }
+  else if(num>1){
+  for(var g=re;g<num;g++){
+  re = fib[g]+fib[g+1];
+  if(fib[g]%2==0){
+      fib[g] = undefined;
+    }
+    if(re<=num){
+    fib.push(re);
+    }
+    if(fib[g]!==undefined){
+      fab.push(fib[g]);
+    }
+    var ge = fab.reduce(function(a,b){return a+b});
+  }
+}
+console.log(ge)
+  return ge;
+}
+
+------------------------------------------------------------------------------
+
+                                    SUMAR TODOS NUMEROS PRIMOS
+
+function sumPrimes(num) {
+  var primes = [];
+  for(let i=2;i<=num;i++){
+    if(primes.every((prime) => i%prime !==0 ))
+      primes.push(i);
+  }
+  return primes.reduce((sum, prim) => sum + prim, 0);
+}
+
+sumPrimes(10); //returns "17"
+--------------------------------------------------------------------------------------------------------
+
+                          MINIMO MÚLTIPLO COMÚN
+smallestCommons([1, 5]) should return a number.
+smallestCommons([1, 5]) should return 60.
+smallestCommons([5, 1]) should return 60.
+smallestCommons([2, 10]) should return 2520.
+smallestCommons([1, 13]) should return 360360.
+
+function smallestCommons(arr) {
+  var pa, pe;
+  let max = Math.max(...arr);
+  let min = Math.min(...arr);
+  var sol = max;
+  
+  for(let i=max-1;i>=min;i--){
+    if(sol%i){
+      sol += max;
+      i = max;
+    }
+  }
+return sol;
+}
+
+
+smallestCommons([1,5]);
+-----------------------------------------------------------------------------
+                        FUNCIONES CON PARÁMETROS-FUNCIÓN
+
+function dropElements(arr, func) {
+  var ary = arr.length-1;
+  console.log(func(ary))
+  while(arr.length > 0 && !func(arr[0])){
+    arr.shift();
+  }
+  return arr;
+}
+
+dropElements([1, 2, 3], function(n) {return n < 3; });
+dropElements([1, 2, 3, 4], function(n) {return n >= 3;}) should return [3, 4].
+dropElements([0, 1, 0, 1], function(n) {return n === 1;}) should return [1, 0, 1].
+dropElements([1, 2, 3], function(n) {return n > 0;}) should return [1, 2, 3].
+dropElements([1, 2, 3, 4], function(n) {return n > 5;}) should return [].
+---------------------------------------------------------------------------------------------
+                              NESTED ARRAY
+
+function steamrollArray(arr) {
+  return arr.toString()
+  .replace(",,", ",")
+  .split(",")
+  .map(function(v){
+    if(v == "[object Object]"){
+      return {};
+    }else if(isNaN(v)) {
+      return v;
+    }else {
+      return parseInt(v);
+    }
+  })
+}
+
+steamrollArray([1, [2], [3, [[4]]]]);
+
+steamrollArray([[["a"]], [["b"]]]) should return ["a", "b"].
+steamrollArray([1, [2], [3, [[4]]]]) should return [1, 2, 3, 4]
+-------------------------------------------------------------------------
+
+                             PROPIEDAD DENTRO DEL OBJETO? 
+
+function truthCheck(collection, pre) {
+  var gep, bo;
+  for(let prop in collection){
+    gep = collection[prop];
+   if(!gep.hasOwnProperty(pre)){
+     console.log(gep)
+     return false;
+   }else {
+     bo = gep[pre];
+     if(bo==0||bo==""||bo==null||!bo)
+     return false;
+   }
+  }
+return true;
+}
+
+
+truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");  // true
